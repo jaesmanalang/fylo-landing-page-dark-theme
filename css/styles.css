@@ -87,9 +87,10 @@ img {
 }
 
 .cta {
+  color: var(--color-white);
   font-family: var(--main-font);
-  display: inline-block;
-  padding: 1.2rem 8.2rem;
+  display: block;
+  padding: 1.2rem 5rem;
   margin: 2rem 0;
   border-radius: 50px;
   background-image: linear-gradient(to right, var(--cta-cyan), var(--cta-blue));
@@ -110,6 +111,14 @@ img {
   width: 2.5rem;
   margin-left: .5rem;
   max-width: 100%;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-small {
@@ -286,19 +295,19 @@ header {
 .testimonial-card {
   background-color: var(--testimonial-background-color);
   width: 300rem;
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 auto;
   margin-bottom: 2.5rem;
   color: var(--color-white);
-  line-height: 1.8;
+  line-height: 1.6;
   padding: 3rem 2rem;
   text-align: start;
   border-radius: 5px;
-  box-shadow: 0px 2rem 5rem rgba(0, 0, 0, .1);
+  box-shadow: 0 0 1rem rgba(80, 80, 80, 0.3);
 }
 
 .testimonial-card__text {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
@@ -326,6 +335,104 @@ header {
   font-size: 1.6rem;
   color: var(--color-lighter-slate);
 }
+
+/* Section: Access */
+
+.access {
+  transform: translateY(50%);
+}
+
+.access__card {
+  background-color: var(--intro-background-color);
+  padding: 3rem 2rem;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .3);
+}
+
+.access__card p {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.access__form input {
+  display: block;
+  padding: 2rem 3rem;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 50px;
+  border: 1px solid transparent;
+}
+
+.access__form-btn {
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 1.6rem;
+  background-image: linear-gradient(to right, var(--cta-cyan), var(--cta-blue));
+  color: #fff
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 30rem;
+  padding-bottom: 5rem;
+  background-color: var(--footer-background-color);
+  color: var(--color-white);
+}
+
+.footer img {
+  max-width: 100%;
+}
+
+.footer__contact {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.footer__location,
+.footer__phone,
+.footer__email {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  margin-bottom: 2rem;
+
+}
+
+.footer__location-img {
+  margin-top: .5rem;
+}
+
+.footer__location-img,
+.footer__phone-img,
+.footer__email-img {
+  width: 3rem;
+}
+
+.footer nav ul {
+  margin: 4rem 0;
+}
+
+.footer nav ul li {
+  margin: 1.5rem 0;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-media a {
+  display: block;
+  padding: 1.2rem 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+}
+
+
+
+
 
 /* Media Queries */
 
