@@ -10,7 +10,7 @@ function loadEventListeners() {
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('toggle');
     navList.classList.toggle('nav-active');
-    header.classList.toggle('bg-dark');
+    // header.classList.toggle('bg-dark');
   });
 }
 
