@@ -101,16 +101,26 @@ img {
 .cta-btn {
   color: var(--cta-cyan);
   padding-bottom: 0.2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 5rem;
+  display: inline-block;
+  position: relative;
   border-bottom: 1px solid var(--cta-cyan);
+  letter-spacing: 1px;
+  transition: transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateX(5px);
 }
 
 .cta-btn img {
+  position: absolute;
+  top: 1px;
+  right: 0;
   width: 2.5rem;
-  margin-left: 0.5rem;
   max-width: 100%;
+  transform: translateX(100%);
+  border-bottom: 1px solid var(--cta-cyan);
 }
 
 .mt-5 {
@@ -138,6 +148,7 @@ img {
 header {
   background-color: var(--intro-background-color);
   padding: 2rem 0;
+  z-index: 2000;
 }
 
 .nav {
@@ -216,6 +227,11 @@ header {
   display: inline-block;
   width: 100%;
   padding: 2rem;
+  transition: all 0.4s ease;
+}
+
+.nav__link:hover {
+  color: var(--cta-cyan);
 }
 
 .nav-active {
@@ -293,16 +309,20 @@ header {
 /* Section: Testimonials */
 
 .testimonials {
-  position: relative;
   padding: 5rem 0;
+}
+
+.testimonials .container {
+  position: relative;
 }
 
 .testimonials__quote {
   position: absolute;
-  top: 3rem;
-  left: 4rem;
+  top: 0;
+  left: 5%;
   z-index: -100;
   width: 2.5rem;
+  transform: translateY(-60%);
 }
 
 .testimonials__quote img {
@@ -387,6 +407,12 @@ header {
   font-size: 1.6rem;
   background-image: linear-gradient(to right, var(--cta-cyan), var(--cta-blue));
   color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.access__form-btn:hover {
+  transform: translateY(-2px);
 }
 
 /* Footer */
@@ -443,20 +469,66 @@ header {
   padding: 1.2rem 2rem;
   border-radius: 50%;
   border: 1px solid var(--color-white);
+  transition: transform 0.2s ease;
+}
+
+.social-media a:hover {
+  color: var(--cta-cyan);
+  border-color: var(--cta-cyan);
+  transform: translateY(-2px);
 }
 
 /* Media Queries */
 
-@media screen and (max-width: 815px) and (max-height: 500px) {
-  .intro__img,
-  .productive__img {
-    width: 50%;
+/* Iphone 5 */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 50%;
   }
 }
 
-@media screen and (max-height: 600px) {
+/* @media screen and (max-height: 569px) {
   html {
     font-size: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 860px) {
+  html {
+    font-size: 55% !important;
+  }
+  .intro__img,
+  .productive__img {
+    width: 50% !important;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 710px) {
+  html {
+    font-size: 50% !important;
+  }
+  .intro__img,
+  .productive__img {
+    width: 40% !important;
+  }
+}
+
+
+ IPHONE 6, 7 ,8 X PLUS LANDSCAPE */
+
+@media screen and (min-width: 1024px) and (min-height: 1300px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (min-width: 560px) and (max-height: 415px) {
+  html {
+    font-size: 45%;
+  }
+  .intro__img,
+  .productive__img {
+    width: 30%;
   }
 }
 
@@ -495,7 +567,7 @@ header {
 }
 
 /* Tablet */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 760px) {
   .intro .container {
     display: flex;
     height: 100%;
@@ -546,14 +618,32 @@ header {
   }
 
   /* Productive */
-  .productive__img {
-    width: 70%;
+  .productive .container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5rem;
   }
 
-  .productive__content p {
-    margin: 1.5rem auto;
-    width: 80%;
+  .productive__img {
+    grid-column: 1 / 5;
+    width: 100%;
   }
+
+  .productive__content {
+    grid-column: 5 / 9;
+    width: 100%;
+    text-align: start;
+    padding: 0;
+    margin: auto 0;
+  }
+
+  .productive .container a {
+    text-align: center;
+  }
+
+  /* .productive__content h2 {
+    margin: 0;
+  } */
 
   /* Testimonials */
 
@@ -581,6 +671,16 @@ header {
     margin: 0 auto;
     z-index: 100;
     /* max-width: initial; */
+  }
+
+  .testimonials__quote {
+    left: 3.5rem;
+  }
+
+  /* Access Form */
+  .access__card {
+    width: 80%;
+    margin: 0 auto;
   }
 
   /* Footer */
@@ -628,6 +728,50 @@ header {
   .footer .container > p {
     grid-row: 4 / 5;
     grid-column: 1 / -1;
+  }
+}
+
+/* IPad Pro and Desktops */
+@media screen and (min-width: 1024px) {
+  .testimonials .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonial-card-1 {
+    grid-column: 1 / 2;
+  }
+
+  .testimonial-card-2 {
+    grid-column: 2 / 3;
+  }
+
+  .testimonial-card-3 {
+    grid-column: 3 / 4;
+  }
+
+  .access__card {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .access__card p {
+    width: 70%;
+    margin: 2rem auto;
+  }
+
+  .access__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .access__form input:nth-child(1) {
+    width: 60%;
+  }
+
+  .access__form input:nth-child(2) {
+    width: 35%;
+    /* margin-right: auto; */
   }
 }
 
