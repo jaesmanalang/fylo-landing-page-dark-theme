@@ -252,8 +252,7 @@ header {
   justify-content: space-around;
 }
 
-.intro a {
-}
+.intro a {}
 
 .intro h1 {
   margin-top: 2rem;
@@ -526,11 +525,24 @@ header {
   html {
     font-size: 45%;
   }
+
   .intro__img,
   .productive__img {
     width: 30%;
   }
 }
+
+@media screen and (min-width: 500px) and (max-height: 820px) {
+  .intro {
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  .intro__img {
+    width: 40% !important;
+  }
+}
+
 
 @media screen and (min-width: 600px) {
   .nav__list {
@@ -718,6 +730,7 @@ header {
   .footer nav ul {
     margin: 2rem 0;
   }
+
   .social-media {
     grid-row: 3 / 4;
     grid-column: 1 / -1;
@@ -725,7 +738,7 @@ header {
     margin: 0 auto;
   }
 
-  .footer .container > p {
+  .footer .container>p {
     grid-row: 4 / 5;
     grid-column: 1 / -1;
   }
