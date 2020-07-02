@@ -15,3 +15,8 @@ function loadEventListeners() {
 }
 
 loadEventListeners();
+
+gsap.from('.intro__img', { opacity: 0, duration: 1, y: -50 });
+gsap.from('.intro__content h1', { opacity: 0, duration: 1, x: -50 });
+gsap.from('.intro__content p', { opacity: 0, duration: 1, x: 50 });
+gsap.from('.intro a', { opacity: 0, duration: 1, y: 50 });
